@@ -52,15 +52,15 @@ def regionGrow(img,seeds,thresh,p = 1):
  return seedMark
 
 
-img = cv2.imread('lena.png',0)
-originImg=cv2.imread('lena.png')
-#seeds = [Point(10,10),Point(230,700),Point(316,500)]
-seedRaw=np.loadtxt('lena.png.haraff',dtype='i',delimiter=' ')[:,:2]
+img = cv2.imread('lean.png',0)
+originImg=cv2.imread('lean.png')
+#seeds = [Point(40,256)]
+seedRaw=np.loadtxt('lean.png.haraff',dtype='i',delimiter=' ')[:,:2]
 #seedRaw=np.loadtxt('test.txt',dtype='i',delimiter=' ')[:,:2]
 seeds=[]
 for temp in seedRaw:
     seeds.append(Point(temp[1],temp[0]));
-binaryImg = regionGrow(img,seeds,3)
+binaryImg = regionGrow(img,seeds,2.5)
 cv2.imshow('1',binaryImg)
 cv2.imshow('2',originImg)
 cv2.waitKey(0)
